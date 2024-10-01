@@ -15,9 +15,10 @@ function RockPapersScissors(x){
         let cpuScore = document.getElementById("cpuScore")
         let tieScore = document.getElementById("tieScore")
     
-        if(RPSRand == x.value){// figure out a way to distanguish rock paper and scissor
+        if(RPSRand == x.value){// figure out a way to distanguish rock paper and scissor 
+            randomSelect.innerText = RPSRand;
+            userSelect.innerText = x.value;
             tie = tie + 1;
-            console.log("tie")
             tieScore.innerText = tie;
             
         }
