@@ -14,13 +14,15 @@ function RockPapersScissors(x){
         let userScore = document.getElementById("userScore")
         let cpuScore = document.getElementById("cpuScore")
         let tieScore = document.getElementById("tieScore")
-    
+        let result = document.getElementById("result")
+        let res = '';
+
         if(RPSRand == x.value){// figure out a way to distanguish rock paper and scissor 
             randomSelect.innerText = RPSRand;
             userSelect.innerText = x.value;
             tie = tie + 1;
             tieScore.innerText = tie;
-            
+            result.innerText = res = "Tied";
         }
 
         if(RPSRand == "rock" && x.value == "scissors" || RPSRand == "paper" && x.value == "rock" || RPSRand == "scissors" && x.value == "paper" ){
@@ -28,12 +30,15 @@ function RockPapersScissors(x){
             userSelect.innerText = x.value;
             cpu++;
             cpuScore.innerText = cpu;
+            result.innerText = res = "Lose";
         
         }else if(RPSRand == "scissors" && x.value == "rock" || RPSRand == "rock" && x.value == "paper" || RPSRand == "paper" && x.value == "scissors"){
             randomSelect.innerText = RPSRand;
             userSelect.innerText = x.value;
             user++;
             userScore.innerText = user;
+            result.innerText = res = "Win";
+        
         }
        
    
