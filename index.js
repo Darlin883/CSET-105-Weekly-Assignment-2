@@ -1,48 +1,39 @@
+     
+     let user = 0;
+     let tie = 0;
+     let cpu = 0;
 
 function RockPapersScissors(x){
     let options = ['scissors', 'rock','paper'];
     let randOpIndex = Math.floor(Math.random() * 3); // random operator
     let RPSRand = options[randOpIndex];
 
-    let ele = document.createElement("h3")
-    let div = document.getElementById("div")
 
-     let user = 0;
-     let cpu = 0;
+        let randomSelect = document.getElementById("randomSelect")
+        let userSelect = document.getElementById("userSelect")
+        let userScore = document.getElementById("userScore")
+        let cpuScore = document.getElementById("cpuScore")
+        let tieScore = document.getElementById("tieScore")
     
         if(RPSRand == x.value){// figure out a way to distanguish rock paper and scissor
+            tie = tie + 1;
             console.log("tie")
-            // ele.innerHTML = (`tie`)
-            // div.appendChild(ele) works
+            tieScore.innerText = tie;
+            
         }
 
-        if(RPSRand == "rock" && x.value == "scissors"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            // ele.innerHTML = (`CPU chose: ${RPSRand} && user: ${x.value}`)
-            // div.(ele)
-            console.log("CPU won")
+        if(RPSRand == "rock" && x.value == "scissors" || RPSRand == "paper" && x.value == "rock" || RPSRand == "scissors" && x.value == "paper" ){
+            randomSelect.innerText = RPSRand;
+            userSelect.innerText = x.value;
+            cpu++;
+            cpuScore.innerText = cpu;
         
-        }else if(RPSRand == "scissors" && x.value == "rock"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            console.log("user won")
+        }else if(RPSRand == "scissors" && x.value == "rock" || RPSRand == "rock" && x.value == "paper" || RPSRand == "paper" && x.value == "scissors"){
+            randomSelect.innerText = RPSRand;
+            userSelect.innerText = x.value;
+            user++;
+            userScore.innerText = user;
         }
-
-        if(RPSRand == "paper" && x.value == "rock"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            console.log("CPU won")
-        }else if(RPSRand == "rock" && x.value == "paper"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            console.log("user won")
-        }
-
-        if(RPSRand == "scissors" && x.value == "paper"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            console.log("CPU won")
-        }else if(RPSRand == "paper" && x.value == "scissors"){
-            console.log(`CPU chose: ${RPSRand} && user: ${x.value}`)
-            console.log("user won")
-        }
-    
-    
+       
    
 }
